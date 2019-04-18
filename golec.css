@@ -1,0 +1,24 @@
+.anvil{
+
+}
+
+.player{
+
+}
+
+.word{
+
+}
+
+.healthbar{
+
+}
+
+.title{
+  overflow: hidden;
+    background-image: url(https://cdn.cnn.com/cnnnext/dam/assets/150720123930-03-foods-cause-viruses-large-169.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 20px 10px;
+  border: 5px solid black;
+}
