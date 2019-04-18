@@ -16,9 +16,13 @@
 
 .title{
   overflow: hidden;
-    background-image: url(https://cdn.cnn.com/cnnnext/dam/assets/150720123930-03-foods-cause-viruses-large-169.jpg);
+  background-image: url(http://www.superlife.com/wp-content/uploads/2015/09/Mixed-Greens-2-1024x631.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
   padding: 20px 10px;
   border: 5px solid black;
+  text-shadow: 2px 2px black;
+  align-content: center;
+  text-align: center;
+  color: white;
 }
