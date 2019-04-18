@@ -5,7 +5,7 @@ class Anvil {
         this.imgsrc = _imgsrc;
     }
 
-    smashPlayer() {
+     smashPlayer() {
 
     }
 }
