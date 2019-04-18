@@ -4,4 +4,8 @@ class Anvil {
         this.ypos = _ypos;
         this.imgsrc = _imgsrc;
     }
+
+    smashPlayer() {
+
+    }
 }
