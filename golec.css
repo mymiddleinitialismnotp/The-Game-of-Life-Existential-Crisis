@@ -11,13 +11,14 @@
 }
 
 .healthbar{
-
+  text-align: center;
 }
 
 .title{
   overflow: hidden;
   background-repeat: no-repeat;
   background-size: 100%;
+  background-color: #B0D7E5;
   padding: 20px 10px;
   border: 5px solid black;
   text-shadow: 10px 10px black;
@@ -30,8 +31,12 @@
 
 .column {
   float: left;
-  width: 33.33%;
-
+  width: 32.995%;
+  height: 70%;
+  z-index: 0;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  background-image: linear-gradient(to right, #C8C8C8 , white, #C8C8C8);
 }
 
 /* Clear floats after the columns */
@@ -39,4 +44,15 @@
   content: "";
   display: table;
   clear: both;
+}
+
+#footer {
+  position: relative;
+  height: 5%;
+  width: 99.2%;
+  background-color: #B0D7E5;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  border: 5px solid black;
 }
