@@ -10,8 +10,8 @@ class GameOfLife {
                 console.log(move)
                 this.player.changeColumnPosition(+1);
                 this.player.render();
-            })
-        })
+            }
+        }
     }
 }
 
@@ -41,7 +41,7 @@ class Player {
         if(this.colPos == 2) {
             // This is where you need to remove it from one parent column
             // And then append it as a child to a new parent column
-
+//https://www.w3schools.com/jsref/met_node_removechild.asp
         }
     }
 }
