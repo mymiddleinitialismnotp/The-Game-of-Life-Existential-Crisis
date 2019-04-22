@@ -3,7 +3,8 @@
 }
 
 .player{
-
+  position: relative;
+  top:92.5%;
 }
 
 .word{
@@ -31,11 +32,11 @@
 
 .column {
   float: left;
-  width: 32.995%;
+  width: 33.33%;
   height: 70%;
   z-index: 0;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
+  // border-left: 2px solid black;
+  // border-right: 2px solid black;
   background-image: linear-gradient(to right, #C8C8C8 , white, #C8C8C8);
 }
 
@@ -55,4 +56,22 @@
   left: 0;
   bottom: 0;
   border: 5px solid black;
+}
+
+#column1{
+  position: relative;
+  top:0%;
+  text-align: center;
+}
+
+#column2{
+  position: relative;
+  top:50%;
+  text-align: center;
+}
+
+#column3{
+  position: relative;
+  top:95%;
+  text-align: center;
 }
