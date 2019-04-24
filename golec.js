@@ -68,15 +68,16 @@ class Word {
     constructor(_xpos, _ypos, _imgsrc) {
         this.xpos = _xpos;
         this.ypos = _ypos;
-       this.ystep = _ystep;
-     this.color = _color;
-     this.elem = document.getElementById(_id);
+        this.ystep = _ystep;
+        this.color = _color;
+        this.elem = document.getElementById(_id);
 
     }
+     let goodwords = ["small animals", "batteries", "green lights", "sleep", "ice cream", "chickens", "small plants", "pay raise", "music", "art"];
+     let badwords = ["anxiety", "depression", "taxes", "dictators", "eyebrow mites", "homework", "moist", "tourists", "sneezing", "dirty dishes", "wet socks", "weak handshakes", "overexplaining", "student debt", "sweat"];
+
 }
 
-   let goodwords = ["small animals", "batteries", "green lights", "sleep", "ice cream", "chickens", "small plants", "pay raise", "music", "art"];
-   let badwords = ["anxiety", "depression", "taxes", "dictators", "eyebrow mites", "homework", "moist", "tourists", "sneezing", "dirty dishes", "wet socks", "weak handshakes", "overexplaining", "student debt", "sweat"];
 
 
 
