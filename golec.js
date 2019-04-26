@@ -122,9 +122,7 @@
 //
 
 class Healthbar {
-    constructor(_xpos, _ypos, _id) {
-        this.xpos = _xpos;
-        this.ypos = _ypos;
+    constructor() {
         this.elem = document.getElementById("healthbar");
         this.health = 100;
         this.elem.min = 0;
