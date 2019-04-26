@@ -19,6 +19,7 @@ class GameOfLife {
 
 
 
+
 class Player {
     constructor(_xpos, _ypos, _imgsrc) {
         this.colPos = 2;
