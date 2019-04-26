@@ -4,13 +4,13 @@ class GameOfLife {
         window.addEventListener('keydown', (e) => {
             if(e.keyCode == 37) {
                 console.log("move left!");
-                this.player.changeColumnPosition(-1);
+                this.player.goLeft();
                 this.player.render();
 
 
             }else if(e.keycode == 39) {
-                console.log(move)
-                this.player.changeColumnPosition(+1);
+                console.log("move")
+                this.player.goRight();
                 this.player.render();
             }
         }
@@ -18,9 +18,9 @@ class GameOfLife {
 
 
 class Player {
-    constructor(_xpos, _ypos, _imgsrc) {
-        this.colPos = 2;
-        this.imgsrc = _imgsrc;
+    constructor(_xpos, _ypos) {
+        this.xpos = _xpos;
+        this.ypos = _ypos;
         this.div = document.getElementById("player");
     }
 
@@ -32,19 +32,18 @@ class Player {
 
     }
 
-    changeColumnPosition(delta){
-        this.colPos = this.colPos + delta;
-        console.log(this.colPos);
+    goLeft(){
+        //add if then alse statement
+        this.xpos = this.xpos - 10;
+    }
+
+    goRight(){
+        //add if then alse statement
+        this.xpos = this.xpos + 10;
     }
 
     render() {
         let parent = this.div.parentNode;
-
-        if(this.colPos == 2) {
-             //This is where you need to remove it from one parent column
-            // And then append it as a child to a new parent column
-//https://www.w3schools.com/jsref/met_node_removechild.asp
-        }
     }
 }
 
