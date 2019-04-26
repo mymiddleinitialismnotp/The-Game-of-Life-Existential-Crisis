@@ -10,15 +10,10 @@ class GameOfLife {
                 console.log(move)
                 this.player.changeColumnPosition(+1);
                 this.player.render();
-        }
+            }
         }
     }
 }
-
-
-
-
-
 
 class Player {
     constructor(_xpos, _ypos, _imgsrc) {
@@ -56,7 +51,7 @@ class Player {
 
 class Anvil {
     constructor(_xpos, _ypos, _imgsrc) {
-       this.xpos = _xpos;
+        this.xpos = _xpos;
        this.ypos = _ypos;
        this.imgsrc = _imgsrc;
     }
@@ -76,16 +71,12 @@ class Word {
         this.ystep = _ystep;
         this.color = _color;
         this.elem = document.getElementById(_id);
-        this.goodWords = ["small animals", "batteries", "green lights", "sleep", "ice cream", "chickens", "small plants", "pay raise", "music", "art"];
-        this.badWords = ["anxiety", "depression", "taxes", "dictators", "eyebrow mites", "homework", "moist", "tourists", "sneezing", "dirty dishes", "wet socks", "weak handshakes", "overexplaining", "student debt", "sweat"];
-        this.winningWord = this.goodWords[Math.ceil(Math.random()*10)]
+
     }
 
+     let goodwords = ["small animals", "batteries", "green lights", "sleep", "ice cream", "chickens", "small plants", "pay raise", "music", "art"];
+     let badwords = ["anxiety", "depression", "taxes", "dictators", "eyebrow mites", "homework", "moist", "tourists", "sneezing", "dirty dishes", "wet socks", "weak handshakes", "overexplaining", "student debt", "sweat"];
 
-
-     winningWord(){
-        let win = goodwords[Math.floor(Math.Random()*10)]
-    }
 }
 
 
@@ -93,13 +84,12 @@ class Word {
 
 
 class Healthbar {
-    constructor(_xpos, _ypos, _imgsrc) {
+    constructor(_xpos, _ypos, _id) {
         this.xpos = _xpos;
         this.ypos = _ypos;
-        this.imgsrc = _imgsrc;
-        this.healthValue = (Math.ceil * (Math.random()*100))
+        this.id = getElementByClassName("healthbar");
    }
-
+    let healthValue = (Math.ceil * (Math.random()*100))
 }
 
 
