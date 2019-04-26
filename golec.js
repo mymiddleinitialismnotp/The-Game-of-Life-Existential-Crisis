@@ -94,8 +94,9 @@ class Healthbar {
         this.xpos = _xpos;
         this.ypos = _ypos;
         this.imgsrc = _imgsrc;
+        this.healthValue = (Math.ceil * (Math.random()*100))
    }
-    let healthValue = (Math.ceil * (Math.random()*100))
+
 }
 
 
