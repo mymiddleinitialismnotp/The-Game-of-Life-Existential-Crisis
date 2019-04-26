@@ -6,16 +6,19 @@ class GameOfLife {
                 console.log("move left!");
                 this.player.changeColumnPosition(-1);
                 this.player.render();
+
+
             }else if(e.keycode == 39) {
                 console.log(move)
                 this.player.changeColumnPosition(+1);
                 this.player.render();
         }
         }
-    }
+
+                                }
+
+                                }
 }
-
-
 
 
 
@@ -78,13 +81,12 @@ class Word {
         this.elem = document.getElementById(_id);
         this.goodWords = ["small animals", "batteries", "green lights", "sleep", "ice cream", "chickens", "small plants", "pay raise", "music", "art"];
         this.badWords = ["anxiety", "depression", "taxes", "dictators", "eyebrow mites", "homework", "moist", "tourists", "sneezing", "dirty dishes", "wet socks", "weak handshakes", "overexplaining", "student debt", "sweat"];
-        this.winningWord = this.goodWords[Math.ceil(Math.random()*10)]
     }
 
 
 
      winningWord(){
-        let win = goodwords[Math.floor(Math.Random()*10)]
+        let win = this.goodwords[Math.floor(Math.Random()*10)]
     }
 }
 
