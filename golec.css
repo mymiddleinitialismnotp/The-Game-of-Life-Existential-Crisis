@@ -7,7 +7,7 @@
 
 }
 
-.player{
+#player{
   position: relative;
   top:92.5%;
     background-image: url(https://s3.amazonaws.com/peoplepng/wp-content/uploads/2018/12/26092129/Happy-Person-Free-Download-PNG.png)
@@ -17,7 +17,7 @@
 
 }
 
-.healthbar{
+#healthbar{
   text-align: center;
 }
 
