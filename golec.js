@@ -67,7 +67,7 @@ class Anvil {
 
 
 class Word {
-    constructor(_xpos, _ypos, _ystep, _id) {
+    constructor(_xpos, _ypos, _ystep, _ystep, _id) {
         this.xpos = _xpos;
         this.ypos = _ypos;
         this.ystep = _ystep;
@@ -86,22 +86,21 @@ class Word {
 }
 
 // Some variables that we need below
-var boxes = [];
-var numBoxes = 250;
+var words = [];
+var numBoxes = Math.floor(Math.random()*5);
 var container = document.getElementById("container");
 
 // Dynamically create the boxes
 for(var i = 0; i < numBoxes; i++){
-    let animatedDiv = document.createElement("div");
+    let animatedDiv = document.createElement("word");
     animatedDiv.className = "box";
     animatedDiv.id = "box" + i;
     container.appendChild(animatedDiv);
-    boxes[i] = new Box(Math.random()*350,
-                       Math.random()*350,
+    boxes[i] = new Word(Math.random()*500,
+                      0,
                        Math.random(),
                        Math.random(),
-                       '#'+Math.floor(Math.random()*16777215).toString(16),
-                       animatedDiv.id);
+                       animatedDiv.id)
 }
 
 var id = setInterval(frame, 5);
@@ -110,16 +109,12 @@ var id = setInterval(frame, 5);
 function frame() {
     // Box 1
     for (var i = 0; i < boxes.length; i++) {
-        if (boxes[i].xpos > 350 || boxes[i].xpos < 0) {
-            boxes[i].xstep = -boxes[i].xstep;
-        }
-        if (boxes[i].ypos > 350 || boxes[i].ypos < 0) {
-            boxes[i].ystep = -boxes[i].ystep;
+        if (words[i].ypos > 350 || words[i].ypos < 0) {
+            words[i].ystep = -words[i].ystep;
         }
 
-        boxes[i].xpos = boxes[i].xpos + boxes[i].xstep;
-        boxes[i].ypos = boxes[i].ypos + boxes[i].ystep;
-        boxes[i].render();
+        words[i].ypos = words[i].ypos + words[i].ystep;
+        words[i].render();
     }
 }
 
