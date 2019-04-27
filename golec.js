@@ -73,8 +73,8 @@ class Word {
         this.ypos = _ypos;
         this.ystep = _ystep;
         this.elem = document.getElementById(_id);
-        this.goodWords = ["small animals", "batteries", "green lights", "sleep", "ice cream", "chickens", "small plants", "pay raise", "music", "art"];
-        this.badWords = ["anxiety", "depression", "taxes", "dictators", "eyebrow mites", "homework", "moist", "tourists", "sneezing", "dirty dishes", "wet socks", "weak handshakes", "overexplaining", "student debt", "sweat"];
+        this.goodWords = ["smallanimals", "batteries", "greenlights", "sleep", "icecream", "chickens", "smallplants", "payraise", "music", "art"];
+        this.badWords = ["anxiety", "depression", "taxes", "dictators", "eyebrowmites", "misspelleddwords", "moist", "tourists", "sneezing", "dirtydishes", "wetsocks", "weakhandshakes", "overexplaining", "studentdebt", "sweat"];
         this.win = "";
     }
      winningWord(){
@@ -89,7 +89,7 @@ class Word {
 // Some variables that we need below
 var words = [];
 var numBoxes = Math.floor(Math.random()*5);
-var container = document.getElementById("container");
+var container = document.getElementById("body");
 
 // Dynamically create the boxes
 for(var i = 0; i < numBoxes; i++){

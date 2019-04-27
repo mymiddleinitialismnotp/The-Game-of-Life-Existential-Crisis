@@ -87,78 +87,103 @@
 
 #anxiety{
     color: red;
+    content: "anxiety";
 }
 #art{
     color: #ff6600;
+    content: "art";
 }
 #batteries{
     color: #ffcc00;
+    content: "batteries";
 }
 #chickens{
     color: #ffff66;
+    content: "chickens";
 }
 #depression{
     color: #99ff33;
+    content: "depression";
 }
 #dictators{
     color: #33cc33;
+    content: "dictators";
 }
 #dirtydishes{
     color: 	#00FFFF;
+    content: "dirty dishes";
 }
 #eyebrowmites{
     color: 	#40E0D0;
+    content: "eyebrow mites";
 }
 #greenlights{
-     color: #00BFFF;
+    color: #00BFFF;
+    content: "green lights";
 }
-#homework{
-     color: #0000CD;
+#misspelleddwords{
+    color: #0000CD;
+    content: "missppelled words";
 }
 #icecream{
-     color: #FF00FF;
+    color: #FF00FF;
+    content: "ice cream";
 }
 #moist{
-     color: #9400D3;
+    color: #9400D3;
+    content: "moist";
 }
 #music{
-     color:	#4B0082;
+    color:	#4B0082;
+    content: "music";
 }
 #overexplaining{
-     color:	#FF1493;
+    color:	#FF1493;
+    content: "over explaining";
 }
 #payraise{
-     color:	#F0FFF0;
+    color:	#F0FFF0;
+    content: "pay raise";
 }
 #sleep{
     color:  #F0FFFF;
+    content: "sleep";
 }
 #smallanimals{
     color:	#DAA520;
+    content: "small animals";
 }
 #smallplants{
     color: #D2691E;
+    content: "small plants";
 }
 #sneezing{
     color:	#DC143C;
+    content: "sneezing";
 }
 #studentdebt{
     color:	#DC143C;
+    content: "student debt";
 }
 #sweat{
     color:	#FF6347;
+    content: "sweat";
 }
 #taxes{
     color: #FFD700;
+    content: "taxes";
 }
 #tourists{
     color: #FFA500;
+    content: "tourists";
 }
 #weakhandshakes{
     color:  #FF4500;
+    content: "weak handshakes";
 }
 #wetsocks{
     color:  #CD5C5C;
+    content: "wet socks";
 }
 
 
