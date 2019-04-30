@@ -51,36 +51,18 @@ class Game {
         for (var i = 0; i < that.boxesNum; i++) {
             // create box
             let box = new Box(Math.random() * 350, 0, 0, Math.random() + 0.5, "box" + i, containerId);
-            box.addBox();
             this.boxes.push(box);
-            /*
-            let animatedDiv = document.createElement("div");
-            //create a text element
-            let textContent = document.createElement("P");
-            animatedDiv.className = "box";
-            animatedDiv.id = "box" + i;
-            //randomly choose a word from the array to reference the class to give to the text element
-            textContent.className = that.allWords[Math.floor(Math.random() * 25)];
-            that.container.appendChild(animatedDiv);
-            //append the text content to the animated div
-            animatedDiv.appendChild(textContent);
-            //creating a new object to push into boxes array with specific attributes
-            boxes[i] = new Box(
-                Math.random() * 350,
-                0,
-                0,
-                Math.random() + 0.25,
-                animatedDiv.id
-            )
-            let id = setInterval(function () {
-                for (var i = 0; i < that.boxes.length; i++) {
-
-                }
-            }, 5);
-*/
         }
+        let id = setInterval(function () {
+            for (var i = 0; i < that.boxes.length; i++) {
+                if (that.boxes[i].frame()) {
+                    that.boxes.splice(i, 1);
+                }
+            }
+        }, 5);
     }
 }
+
 
 
 class Box {
@@ -148,6 +130,7 @@ class Box {
   "music",
   "art"
 ];
+        this.elem = this.addBox();
 
     }
     removeBox() {
@@ -165,35 +148,32 @@ class Box {
         this.container.appendChild(animatedDiv);
         //append the text content to the animated div
         animatedDiv.appendChild(textContent);
+        return animatedDiv;
     }
 
 
     // The animation code
     frame() {
         // Box 1
-        for (var i = 0; i < boxes.length; i++) {
-            if (boxes[i].ypos > 365) {
-                boxes[i].removeBox();
-                boxes.splice(i, 1);
-
-            } else if (boxes[i].ypos < 0) {
-                boxes[i].ystep = -boxes[i].ystep;
-            }
-            //supposed to be the collision algorithm
-            /* for (var l = 0; l < boxes.length; l++) {
-                 if (
-                     boxes[i].xpos < player.xpos + player.width &&
-                     boxes[i].xpos + boxes[i].width > player.xpos &&
-                     boxes[i].ypos < player.ypos + player.height &&
-                     boxes[i].ypos + boxes[i].height > player.ypos
-                 ) {
-                     // collision detected!
-                     document.write("collision!");
-                 }
-                 */
+        if (this.ypos > 365) {
+            this.removeBox();
+            return true;
         }
-        boxes[i].ypos = boxes[i].ypos + boxes[i].ystep;
-        boxes[i].render();
+        //supposed to be the collision algorithm
+        /* for (var l = 0; l < boxes.length; l++) {
+             if (
+                 boxes[i].xpos < player.xpos + player.width &&
+                 boxes[i].xpos + boxes[i].width > player.xpos &&
+                 boxes[i].ypos < player.ypos + player.height &&
+                 boxes[i].ypos + boxes[i].height > player.ypos
+             ) {
+                 // collision detected!
+                 document.write("collision!");
+             }
+             */
+        this.ypos = this.ypos + this.ystep;
+        this.render();
+        return false;
     }
 
     render() {
