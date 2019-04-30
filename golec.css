@@ -1,24 +1,33 @@
-#body {
-    height: 60%;
-    width: 100%;
-}
-
-.anvil{
-
-}
-
-#player{
+#container {
+  width: 600px;
+  height: 400px;
   position: relative;
-  top:92.5%;
-    background-image: url(https://s3.amazonaws.com/peoplepng/wp-content/uploads/2018/12/26092129/Happy-Person-Free-Download-PNG.png)
+  background: white;
+  border-style: solid;
+  cursor: pointer;
 }
 
-.word{
+#player {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 225px;
+  top: 350px;
+  background-image: url("https://static01.nyt.com/images/2018/10/04/magazine/04blackhole1/04blackhole1-articleLarge-v3.jpg?quality=75&auto=webp&disable=upscale");
+}
 
+#player:hover {
+  background-color: red;
+}
+
+#player:active {
+  transform: scale(3);
 }
 
 #healthbar{
-
+ width: 50%;
+  font-family: "Impact", fantasy;
+  font-size: 20px;
 }
 
 #healthbar_container{
@@ -37,22 +46,7 @@
   text-align: center;
   color: white;
   font-family: "Impact", fantasy;
-  font-size: 100px
-}
-
-.column {
-  float: left;
-  width: 33.33%;
-  height: 70%;
-  z-index: 0;
-  background-image: linear-gradient(to right, black , #5D5D5D , black);
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+  font-size: 100px;
 }
 
 #footer {
@@ -66,124 +60,278 @@
   border: 5px solid black;
 }
 
-#column1{
+.box {
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: normal;
+  font-family: verdana;
+}
+/*
+#photo{
+ width: 100px;
+  height: 100px;
   position: relative;
-  top:0%;
+  left: 50%;
+  top: 50%;
+  background-image: url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+}
+
+*/
+
+.anxiety::before {
+  width: 100px;
+  height: 40px;
+  top: 0px;
+  left: 0px;
   text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: red;
+  content: "anxiety";
 }
-
-#column2{
-  position: relative;
-  top:0%;
+.art::before {
+  width: 100px;
+  height: 40px;
   text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #ff6600;
+  content: "art";
 }
-
-#column3{
-  position: relative;
-  top:0%;
+.batteries::before {
+  width: 100px;
+  height: 40px;
   text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #ffcc00;
+  content: "batteries";
 }
-
-
-#anxiety{
-    color: red;
-    content: "anxiety";
+.chickens::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #ffff66;
+  content: "chickens";
 }
-#art{
-    color: #ff6600;
-    content: "art";
+.depression::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #99ff33;
+  content: "depression";
 }
-#batteries{
-    color: #ffcc00;
-    content: "batteries";
+.dictators::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #33cc33;
+  content: "dictators";
 }
-#chickens{
-    color: #ffff66;
-    content: "chickens";
+.dirtydishes::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #0ffff;
+  content: "dirty dishes";
 }
-#depression{
-    color: #99ff33;
-    content: "depression";
+.eyebrowmites::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: gray;
+  content: "eyebrow mites";
 }
-#dictators{
-    color: #33cc33;
-    content: "dictators";
+.greenlights::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #0bfff;
+  content: "green lights";
 }
-#dirtydishes{
-    color: 	#00FFFF;
-    content: "dirty dishes";
+.misspelleddwords::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: orange;
+  content: "missppelled words";
 }
-#eyebrowmites{
-    color: 	#40E0D0;
-    content: "eyebrow mites";
+.icecream::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #ff00ff;
+  content: "ice cream";
 }
-#greenlights{
-    color: #00BFFF;
-    content: "green lights";
+.moist::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: green;
+  content: "moist";
 }
-#misspelleddwords{
-    color: #0000CD;
-    content: "missppelled words";
+.music::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #4b0082;
+  content: "music";
 }
-#icecream{
-    color: #FF00FF;
-    content: "ice cream";
+.overexplaining::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #ff1493;
+  content: "over explaining";
 }
-#moist{
-    color: #9400D3;
-    content: "moist";
+.payraise::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: MediumSeaGreen;
+  content: "pay raise";
 }
-#music{
-    color:	#4B0082;
-    content: "music";
+.sleep::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #48D1CC;
+  content: "sleep";
 }
-#overexplaining{
-    color:	#FF1493;
-    content: "over explaining";
+.smallanimals::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #daa520;
+  content: "small animals";
 }
-#payraise{
-    color:	#F0FFF0;
-    content: "pay raise";
+.smallplants::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #d2691e;
+  content: "small plants";
 }
-#sleep{
-    color:  #F0FFFF;
-    content: "sleep";
+.sneezing::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #dc143c;
+  content: "sneezing";
 }
-#smallanimals{
-    color:	#DAA520;
-    content: "small animals";
+.studentdebt::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #dc143c;
+  content: "student debt";
 }
-#smallplants{
-    color: #D2691E;
-    content: "small plants";
+.sweat::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #ff6347;
+  content: "sweat";
 }
-#sneezing{
-    color:	#DC143C;
-    content: "sneezing";
+.taxes::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #ffd700;
+  content: "taxes";
 }
-#studentdebt{
-    color:	#DC143C;
-    content: "student debt";
+.tourists::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #ffa500;
+  content: "tourists";
 }
-#sweat{
-    color:	#FF6347;
-    content: "sweat";
+.weakhandshakes::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #ff4500;
+  content: "weak handshakes";
 }
-#taxes{
-    color: #FFD700;
-    content: "taxes";
+.wetsocks::before {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: #cd5c5c;
+  content: "wet socks";
 }
-#tourists{
-    color: #FFA500;
-    content: "tourists";
-}
-#weakhandshakes{
-    color:  #FF4500;
-    content: "weak handshakes";
-}
-#wetsocks{
-    color:  #CD5C5C;
-    content: "wet socks";
-}
-
-
