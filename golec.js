@@ -54,11 +54,13 @@ class Game {
             this.boxes.push(box);
         }
         let id = setInterval(function () {
+           // let playerPos = this.player.elem.getBoundingClientRect();
             for (var i = 0; i < that.boxes.length; i++) {
                 if (that.boxes[i].frame()) {
                     that.boxes.splice(i, 1);
                     that.boxes.push(new Box(Math.random() * 350, 0, 0, (Math.random() * 1.5), "box" + i, containerId));
                 }
+               // let wordPos = boxes[i].elem.getBoundingClientRect();
             }
         }, 5);
     }
