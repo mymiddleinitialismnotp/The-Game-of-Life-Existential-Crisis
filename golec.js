@@ -72,6 +72,7 @@ class Game {
                         console.log("collision");
                         that.boxes.splice(i, 1);
                         that.boxes.push(new Box(Math.random() * 350, 0, 0, (Math.random() * 1.5), "box" + i, containerId));
+                        that.boxes[i].render();
                     }
                 }
             },
