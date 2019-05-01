@@ -42,13 +42,6 @@ class Game {
         this.healthbar = new Healthbar();
     }
 
-    updateHealth(value) {
-        this.health = this.health + value;
-        this.elem.value = this.health;
-    }
-
-    // Some variables that we need below
-
 
     play() {
         const that = this;
@@ -194,11 +187,6 @@ class Box {
         return false;
     }
 
-    collisionDetection() {
-        /*if () {
-             return true;
-         } */
-    }
 
     winningWord() {
         return this.goodWords[Math.floor(Math.random() * 10)];
@@ -252,8 +240,13 @@ class Healthbar {
     }
 
     updateHealth(value) {
-        this.health = this.health + value;
+        this.health = this.health + loseHealth();
         this.elem.value = this.health;
+    }
+
+    // Some variables that we need below
+loseHealth() {
+}
     }
 
 
