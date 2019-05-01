@@ -36,6 +36,9 @@ class Game {
   "art"
 ];
         this.player = new Player(container, 255, 350, 50, 50);
+        this.click = this.container.addEventListener("click", event => {
+            this.player.move(event)
+        });
     }
 
     updateHealth(value) {
@@ -55,25 +58,27 @@ class Game {
             that.boxes.push(box);
         }
         let id = setInterval(function () {
-                let person = this.player.elem.getBoundingClientRect();
+                let person = that.player.elem.getBoundingClientRect();
                 for (var i = 0; i < that.boxes.length; i++) {
                     if (that.boxes[i].frame()) {
                         that.boxes.splice(i, 1);
                         that.boxes.push(new Box(Math.random() * 350, 0, 0, (Math.random() * 1.5), "box" + i, containerId));
                     }
-                    let word = that.boxes[i].getBoundingClientRect();
+                    let word = that.boxes[i].elem.getBoundingClientRect();
                     if (person.left < word.left + word.width &&
                         person.left + person.width > word.left &&
                         person.top < word.top + word.height &&
                         person.height + person.top > word.top) {
                         console.log("collision");
+                        that.boxes.splice(i, 1);
+                        that.boxes.push(new Box(Math.random() * 350, 0, 0, (Math.random() * 1.5), "box" + i, containerId));
                     }
                 }
-                // let wordPos = boxes[i].elem.getBoundingClientRect();
-            }
+            },
             5);
     }
 }
+
 
 
 
@@ -253,9 +258,7 @@ class Healthbar {
 
 
 
-container.addEventListener("click", event => {
-    player.move(event);
-});
+
 //let myApp = new GameOfLife();
 let hb = new Healthbar();
 let newGame = new Game();
