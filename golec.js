@@ -39,6 +39,7 @@ class Game {
         this.click = this.container.addEventListener("click", event => {
             this.player.move(event)
         });
+        this.healthbar = new Healthbar();
     }
 
     updateHealth(value) {
@@ -69,10 +70,9 @@ class Game {
                         person.left + person.width > word.left &&
                         person.top < word.top + word.height &&
                         person.height + person.top > word.top) {
-                        console.log("collision");
-                        that.boxes.splice(i, 1);
                         that.boxes.push(new Box(Math.random() * 350, 0, 0, (Math.random() * 1.5), "box" + i, containerId));
-                        that.boxes[i].render();
+                        that.boxes[i].removeBox();
+                        that.boxes.splice(i, 1);
                     }
                 }
             },
@@ -245,7 +245,7 @@ class Player {
 class Healthbar {
     constructor() {
         this.elem = document.getElementById("healthbar");
-        this.health = 100;
+        this.health = Math.ceil(Math.random() * 100);
         this.elem.min = 0;
         this.elem.max = 100;
         this.elem.value = this.health;
@@ -255,12 +255,13 @@ class Healthbar {
         this.health = this.health + value;
         this.elem.value = this.health;
     }
+
+
 }
 
 
 
 
 //let myApp = new GameOfLife();
-let hb = new Healthbar();
 let newGame = new Game();
 newGame.play();
