@@ -55,20 +55,21 @@ class Game {
             that.boxes.push(box);
         }
         let id = setInterval(function () {
+                let person = this.player.elem.getBoundingClientRect();
                 for (var i = 0; i < that.boxes.length; i++) {
                     if (that.boxes[i].frame()) {
                         that.boxes.splice(i, 1);
                         that.boxes.push(new Box(Math.random() * 350, 0, 0, (Math.random() * 1.5), "box" + i, containerId));
                     }
-                    let person = that.player.position();
-                    let box = that.boxes[i].getBoundingClientRect();
-                    if (person.left < box.left + box.width &&
-                        person.left + person.width > box.left &&
-                        person.top < box.top + box.height &&
-                        person.height + person.top > box.top) {
+                    let word = that.boxes[i].getBoundingClientRect();
+                    if (person.left < word.left + word.width &&
+                        person.left + person.width > word.left &&
+                        person.top < word.top + word.height &&
+                        person.height + person.top > word.top) {
                         console.log("collision");
                     }
                 }
+                // let wordPos = boxes[i].elem.getBoundingClientRect();
             }
             5);
     }
