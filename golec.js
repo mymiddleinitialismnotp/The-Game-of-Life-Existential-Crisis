@@ -6,7 +6,7 @@ class Game {
         this.elem.max = 100;
         this.elem.value = this.health;
         this.boxes = [];
-        this.boxesNum = Math.ceil(Math.random() * 10);
+        this.boxesNum = Math.ceil(Math.random() * 4) + 3;
         this.container = document.getElementById("container");
         this.allWords = [
   "anxiety",
@@ -35,6 +35,7 @@ class Game {
   "music",
   "art"
 ];
+        this.player = new Player(container, 255, 350, 50, 50);
     }
 
     updateHealth(value) {
@@ -51,16 +52,25 @@ class Game {
         for (var i = 0; i < that.boxesNum; i++) {
             // create box
             let box = new Box(Math.random() * 350, 0, 0, (Math.random() * 1.5), "box" + i, containerId);
-            this.boxes.push(box);
+            that.boxes.push(box);
         }
         let id = setInterval(function () {
-            for (var i = 0; i < that.boxes.length; i++) {
-                if (that.boxes[i].frame()) {
-                    that.boxes.splice(i, 1);
-                    that.boxes.push(new Box(Math.random() * 350, 0, 0, (Math.random() * 1.5), "box" + i, containerId));
+                for (var i = 0; i < that.boxes.length; i++) {
+                    if (that.boxes[i].frame()) {
+                        that.boxes.splice(i, 1);
+                        that.boxes.push(new Box(Math.random() * 350, 0, 0, (Math.random() * 1.5), "box" + i, containerId));
+                    }
+                    let person = that.player.position();
+                    let box = that.boxes[i].getBoundingClientRect();
+                    if (person.left < box.left + box.width &&
+                        person.left + person.width > box.left &&
+                        person.top < box.top + box.height &&
+                        person.height + person.top > box.top) {
+                        console.log("collision");
+                    }
                 }
             }
-        }, 5);
+            5);
     }
 }
 
@@ -177,6 +187,16 @@ class Box {
         return false;
     }
 
+    collisionDetection() {
+        /*if () {
+             return true;
+         } */
+    }
+
+    winningWord() {
+        return this.goodWords[Math.floor(Math.random() * 10)];
+    }
+
     render() {
         this.elem.style.top = this.ypos + "px";
         this.elem.style.left = this.xpos + "px";
@@ -203,6 +223,9 @@ class Player {
 
         this.render();
     }
+    position() {
+        return this.elem.getBoundingClientRect();
+    }
 
     render() {
         this.elem.style.left = this.xpos + "px";
@@ -228,7 +251,7 @@ class Healthbar {
 }
 
 
-let player = new Player(container, 255, 350, 50, 50);
+
 container.addEventListener("click", event => {
     player.move(event);
 });
