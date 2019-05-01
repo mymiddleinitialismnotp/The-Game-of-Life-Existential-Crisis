@@ -1,10 +1,5 @@
 class Game {
     constructor() {
-        this.elem = document.getElementById("healthbar");
-        this.health = 100;
-        this.elem.min = 0;
-        this.elem.max = 100;
-        this.elem.value = this.health;
         this.boxes = [];
         this.boxesNum = Math.ceil(Math.random() * 4) + 3;
         this.container = document.getElementById("container");
@@ -66,6 +61,7 @@ class Game {
                         that.boxes.push(new Box(Math.random() * 350, 0, 0, (Math.random() * 1.5), "box" + i, containerId));
                         that.boxes[i].removeBox();
                         that.boxes.splice(i, 1);
+                        that.healthbar.updateHealth(5);
                     }
                 }
             },
@@ -240,17 +236,12 @@ class Healthbar {
     }
 
     updateHealth(value) {
-        this.health = this.health + loseHealth();
+        this.health = this.health - value;
         this.elem.value = this.health;
     }
-
-    // Some variables that we need below
-loseHealth() {
 }
-    }
 
 
-}
 
 
 
