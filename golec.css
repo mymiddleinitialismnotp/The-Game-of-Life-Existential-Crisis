@@ -3,7 +3,7 @@
     height: 400px;
     position: relative;
     background: white;
-    border-style: solid;
+    border: 5px solid black;
     cursor: pointer;
 }
 
@@ -19,32 +19,33 @@
 #healthbar {
     width: 50%;
     font-family: "Impact", fantasy;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 #healthbar_container {
     text-align: center;
+    padding: 15px 10px;
 }
 
 .title {
     overflow: hidden;
     background-repeat: no-repeat;
-    background-size: 100%;
+    width: 600px;
     background-color: #B0D7E5;
-    padding: 20px 10px;
+    padding: 0px;
     border: 5px solid black;
     text-shadow: 10px 10px black;
     align-content: center;
     text-align: center;
     color: white;
     font-family: "Impact", fantasy;
-    font-size: 100px;
+    font-size: 75px;
 }
 
 #footer {
     position: relative;
     height: 5%;
-    width: 99.2%;
+    width: 600px;
     background-color: #B0D7E5;
     z-index: 1;
     left: 0;

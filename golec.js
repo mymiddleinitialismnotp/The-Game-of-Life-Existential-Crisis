@@ -64,8 +64,14 @@ class Game {
                         that.healthbar.updateHealth(5);
                     }
                 }
+                if (that.healthbar.health <= 0) {
+                    clearInterval(id);
+                }
             },
             5);
+        if (that.healthbar.health <= 0) {
+            alert("Hello! I am an alert box!!");
+        }
     }
 }
 
