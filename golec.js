@@ -35,6 +35,10 @@ class Game {
             this.player.move(event)
         });
         this.healthbar = new Healthbar();
+        this.popUp = document.getElementById('endScreen');
+        this.button = document.getElementById("replayButton");
+        this.popUp.style.display = "none";
+
     }
 
 
@@ -51,7 +55,7 @@ class Game {
                 for (var i = 0; i < that.boxes.length; i++) {
                     if (that.boxes[i].frame()) {
                         that.boxes.splice(i, 1);
-                        that.boxes.push(new Box(Math.random() * 350, 0, 0, (Math.random() * 1.5), "box" + i, containerId));
+                        that.boxes.push(new Box(Math.random() * 350, 0, 0, (Math.round(Math.random() * 1.5) + 0.5), "box" + i, containerId));
                     }
                     let word = that.boxes[i].elem.getBoundingClientRect();
                     if (person.left < word.left + word.width &&
@@ -65,15 +69,18 @@ class Game {
                     }
                 }
                 if (that.healthbar.health <= 0) {
+                    for (var i = 0; i < that.boxes.length; i++) {
+                        that.boxes[i].removeBox();
+                    }
                     clearInterval(id);
+                    that.popUp.style.display = "block";
+
                 }
             },
             5);
-        if (that.healthbar.health <= 0) {
-            alert("Hello! I am an alert box!!");
-        }
     }
 }
+
 
 
 
@@ -255,3 +262,8 @@ class Healthbar {
 //let myApp = new GameOfLife();
 let newGame = new Game();
 newGame.play();
+
+function replay() {
+    newGame = new Game();
+    newGame.play();
+}
