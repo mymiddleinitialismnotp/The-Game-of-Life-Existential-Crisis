@@ -62,7 +62,7 @@ class Game {
                         that.boxes[i].removeBox();
                         that.boxes.splice(i, 1);
                         that.healthbar.updateHealth(5);
-                        alert("collision");
+                        window.alert("collision");
                     }
                 }
             },
