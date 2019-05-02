@@ -1,7 +1,7 @@
 class Game {
     constructor() {
         this.boxes = [];
-        this.boxesNum = Math.ceil(Math.random() * 4) + 3;
+        this.boxesNum = Math.ceil(Math.random() * 3) + 5;
         this.container = document.getElementById("container");
         this.allWords = [
   "anxiety",
@@ -30,7 +30,7 @@ class Game {
   "music",
   "art"
 ];
-        this.player = new Player(container, 255, 350, 50, 50);
+        this.player = new Player(container, 600, 400, 50, 50);
         this.click = this.container.addEventListener("click", event => {
             this.player.move(event)
         });
@@ -47,7 +47,7 @@ class Game {
         let containerId = document.getElementById("container");
         for (var i = 0; i < that.boxesNum; i++) {
             // create box
-            let box = new Box(Math.random() * 350, 0, 0, (Math.random() * 1.5), "box" + i, containerId);
+            let box = new Box(Math.round(Math.random() * 525), 0, 0, (Math.random() * 1.5)+ 0.5, "box" + i, containerId);
             that.boxes.push(box);
         }
         let id = setInterval(function () {
@@ -55,21 +55,17 @@ class Game {
                 for (var i = 0; i < that.boxes.length; i++) {
                     if (that.boxes[i].frame()) {
                         that.boxes.splice(i, 1);
-                        that.boxes.push(new Box(Math.random() * 350, 0, 0, (Math.round(Math.random() * 1.5) + 0.5), "box" + i, containerId));
+                        that.boxes.push(new Box(Math.random() * 525, 0, 0, (Math.round(Math.random() * 1.5) + 0.5), "box" + i, containerId));
                     }
                     let word = that.boxes[i].elem.getBoundingClientRect();
                     if (person.left < word.left + word.width &&
                         person.left + person.width > word.left &&
                         person.top < word.top + word.height &&
                         person.height + person.top > word.top) {
-                        that.boxes.push(new Box(Math.random() * 350, 0, 0, (Math.random() * 1.5), "box" + i, containerId));
+                        that.boxes.push(new Box(Math.random() * 525, 0, 0, (Math.random() * 1.5) + 0.5, "box" + i, containerId));
                         that.boxes[i].removeBox();
                         that.boxes.splice(i, 1);
                         that.healthbar.updateHealth(5);
-<<<<<<< HEAD
-                        window.alert("collision");
-=======
->>>>>>> origin/master
                     }
                 }
                 if (that.healthbar.health <= 0) {
